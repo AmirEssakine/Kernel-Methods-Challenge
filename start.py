@@ -13,9 +13,9 @@ def score(pred, labels):
     return np.mean(pred == labels)
 
 kernel = ConvNgramKernel(gamma=32.0,n=4,k=9,M=4096).kernel
-val_ratio = 0.2
-number_of_runs = 9
-method = 'CSVM'
+val_ratio = 0.1
+number_of_runs = 1
+method = 'SVM'
 
 data = load_data(path)
 print("Size of dataset: ", data['TF2']['X_train'].shape, data['TF2']['X_test'].shape)
