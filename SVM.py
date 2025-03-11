@@ -9,21 +9,13 @@ import cvxopt.solvers
 
 
 class C_SVM:
-    def __init__(self, kernel=None, C=10., solver='BFGS', gamma=0.01, degree=3, normalize=False,
-                 shift=2, nplets=3, gap=2):
-
+    def __init__(self, kernel, C=10., solver='BFGS'):
         if kernel is None:
             raise ValueError("Kernel function must be provided.")
 
         self.C = C
-        self.gamma = gamma
         self.solver = solver
-        self.degree = degree
         self.kernel = kernel
-        self.normalize = normalize
-        self.gap = gap
-        self.nplets = nplets
-        self.shift = shift
         self.alpha = None
         self.b = 0  # Bias term
 
